@@ -9,7 +9,8 @@ class Directory extends React.Component {
       sections: [
         {
           title: "hats",
-          imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
+          imageUrl:
+            "https://images.pexels.com/photos/1124465/pexels-photo-1124465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           id: 1,
           linkUrl: "hats",
         },
@@ -27,14 +28,16 @@ class Directory extends React.Component {
         },
         {
           title: "womens",
-          imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
+          imageUrl:
+            "https://images.pexels.com/photos/975006/pexels-photo-975006.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           size: "large",
           id: 4,
           linkUrl: "shop/womens",
         },
         {
           title: "mens",
-          imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
+          imageUrl:
+            "https://cdn.pixabay.com/photo/2017/11/02/14/26/model-2911330_960_720.jpg",
           size: "large",
           id: 5,
           linkUrl: "shop/mens",
