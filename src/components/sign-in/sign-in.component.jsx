@@ -1,9 +1,12 @@
 import React from "react";
-import "./sign-in.styles.scss";
+import CustomButton from "../custom-button/custom-button.component";
 import FormInput from "../form-input/form-input.component";
-import CustomButtom from "../custom-button/custom-button.component";
 import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
-
+import {
+  ButtonsBarContainer,
+  SignInContainer,
+  SignInTitle,
+} from "./sign-in.styles";
 class SignIn extends React.Component {
   constructor(props) {
     super(props);
@@ -33,42 +36,35 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div className="sign-in">
-        <h2>I already have an account</h2>
-        <span>Sign in with email and password</span>
+      <SignInContainer>
+        <SignInTitle>I already have an account</SignInTitle>
+        <span>Sign in with your email and password</span>
 
         <form onSubmit={this.handleSubmit}>
           <FormInput
-            type="email"
             name="email"
+            type="email"
+            handleChange={this.handleChange}
             value={this.state.email}
-            handleChange={this.handleChange}
-            label="Email"
+            label="email"
             required
           />
-
           <FormInput
-            type="password"
             name="password"
+            type="password"
             value={this.state.password}
-            label="Password"
             handleChange={this.handleChange}
+            label="password"
             required
           />
-
-          <div className="buttons">
-            <CustomButtom type="submit">Sign In</CustomButtom>
-            <CustomButtom
-              type="button"
-              onClick={signInWithGoogle}
-              isGoogleSignIn
-            >
-              {" "}
-              Sign In With Google{" "}
-            </CustomButtom>
-          </div>
+          <ButtonsBarContainer>
+            <CustomButton type="submit"> Sign in </CustomButton>
+            <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+              Sign in with Google
+            </CustomButton>
+          </ButtonsBarContainer>
         </form>
-      </div>
+      </SignInContainer>
     );
   }
 }
